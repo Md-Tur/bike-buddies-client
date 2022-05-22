@@ -1,0 +1,191 @@
+[
+    {
+        "_id": 1,
+        "name": "Indicators",
+        "img": "https://i.ibb.co/R2rjV97/Indicators.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 2,
+        "name": "Kick Lever",
+        "img": "https://i.ibb.co/qpGqLvs/Kick-Lever.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 3,
+        "name": "Mudguard Front",
+        "img": "https://i.ibb.co/vZ2k6HQ/Mudguard-Front.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 4,
+        "name": "Mudguard Rear",
+        "img": "https://i.ibb.co/GW46VjL/Mudguard-Rear.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 5,
+        "name": "Number Plate",
+        "img": "https://i.ibb.co/2hsGkn9/No-Plate.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 6,
+        "name": "Oil Filter",
+        "img": "https://i.ibb.co/jHFgKWS/Oil-Filter.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 7,
+        "name": "Self Motor",
+        "img": "https://i.ibb.co/vLPdc57/Self-Motor.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 8,
+        "name": "Spark Plug",
+        "img": "https://i.ibb.co/8Pv6XVn/Spark-Plug.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 9,
+        "name": "Wheel ( Rim ) Front",
+        "img": "https://i.ibb.co/cwRLVYJ/Wheel-Rim-Front.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 10,
+        "name": "Wheel ( Rim ) Rear",
+        "img": "https://i.ibb.co/VN8X56R/Wheel-Rim-Rear.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 11,
+        "name": "Air Filter",
+        "img": "https://i.ibb.co/3pVzx8F/air-filter.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 12,
+        "name": "Battery",
+        "img": "https://i.ibb.co/qMCvMTC/bike-battery.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 13,
+        "name": "Break Oil",
+        "img": "https://i.ibb.co/K5FT086/break-oil.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 14,
+        "name": "Clutch Oil",
+        "img": "https://i.ibb.co/tCTtxxf/clutch-oil.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 15,
+        "name": "Clutch wire",
+        "img": "https://i.ibb.co/cr7GTvf/clutch-wire.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 16,
+        "name": "Coolant",
+        "img": "https://i.ibb.co/CvVqgJv/coolant.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 17,
+        "name": "Cylinder Kit",
+        "img": "https://i.ibb.co/34LDbn3/cylinder-kit.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 18,
+        "name": "Fork Right Front",
+        "img": "https://i.ibb.co/g9txZBx/Fork-Right-Front.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 19,
+        "name": "Handle Bar",
+        "img": "https://i.ibb.co/3TSm75q/Handle-Bar.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 20,
+        "name": "Headlight",
+        "img": "https://i.ibb.co/mXQbygm/Headlight.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    },
+    {
+        "_id": 21,
+        "name": "Horn",
+        "img": "https://i.ibb.co/nLjCswW/Horn.png",
+        "description": "ewigdifajdhg",
+        "minimum order": "300",
+        "available quantity": "1000",
+        "price": "540"
+    }
+]
