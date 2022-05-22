@@ -16,7 +16,6 @@ const Product = ({ product }) => {
                 <p><small> Available: {available} </small></p>
                 <p>Price: {price} </p>
                 <div class="card-actions">
-                    {/* <button class="btn btn-primary">Buy Now</button> */}
                     <button class="btn btn-outline btn-success">Buy Now</button>
                 </div>
             </div>
