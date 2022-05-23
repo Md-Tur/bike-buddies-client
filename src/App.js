@@ -2,7 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import AddReview from './Pages/Dashboard/AddReview';
 import Dashborad from './Pages/Dashboard/Dashborad';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import Myprofile from './Pages/Dashboard/Myprofile';
 import AllProducts from './Pages/Home/AllProducts/AllProducts';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
@@ -30,7 +36,14 @@ function App() {
           <RequireAuth>
             <Dashborad></Dashborad>
           </RequireAuth>
-        }></Route>
+        }>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='review' element={<AddReview></AddReview>}></Route>
+          <Route path='profile' element={<Myprofile></Myprofile>}></Route>
+          <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='manageOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+        </Route>
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
