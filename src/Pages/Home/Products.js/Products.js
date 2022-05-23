@@ -21,7 +21,7 @@ const Products = () => {
                 </div>
                 <div className='mt-3 mb-3 flex justify-center'>
                     <Link to="/allproducts">
-                        <button class="mt-2 btn btn-outline btn-info">Explore More</button>
+                        <button className="mt-2 btn btn-outline btn-info">Explore More</button>
                     </Link>
                 </div>
             </div>
