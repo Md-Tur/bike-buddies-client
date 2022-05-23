@@ -1,7 +1,7 @@
 import React from 'react';
 import login from '../../../images/login.png';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -24,14 +24,20 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
     };
 
+    const navigate = useNavigate();
+
     let signInError;
 
     if (gLoading || loading) {
         return <Loading></Loading>
     }
 
+    if (gError || error) {
+        signInError = <p className='text-red-500'><small>{gError?.message || error?.message}</small></p>
+    }
+
     if (gUser || user) {
-        console.log(gUser || user);
+        navigate('/');
     }
 
     return (
@@ -41,7 +47,6 @@ const Login = () => {
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -93,8 +98,10 @@ const Login = () => {
                         <input className='btn w-full max-w-xs' value="Login" type="submit" />
                     </form>
 
-                    <p><small>New to Bike Buddies? <Link className='text-primary' to="/signup">Create Account Here</Link></small></p>
+                    <p><small>New to Bike Buddies? <Link className='text-primary' to="/register">Create Account Here</Link></small></p>
+
                     <div className="divider">OR</div>
+
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline btn-accent">
