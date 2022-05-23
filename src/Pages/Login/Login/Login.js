@@ -2,13 +2,20 @@ import React from 'react';
 import login from '../../../images/login.png';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
 
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -18,6 +25,14 @@ const Login = () => {
     };
 
     let signInError;
+
+    if (gLoading || loading) {
+        return <Loading></Loading>
+    }
+
+    if (gUser || user) {
+        console.log(gUser || user);
+    }
 
     return (
         <div className='flex h-screen justify-center items-center'>
