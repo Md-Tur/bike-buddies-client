@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 1,
+        "name": "Holand",
+        "description": "A full range of aftermarket replacement motorcycle indicators from Bike It and Oxford Products. Our range has such a large variety of different styles; chrome, custom, LED, fairing, micro and the latest streaming indicators there's no doubt you will find the right ones for you.",
+        "rating": "3star"
+    },
+    {
+        "_id": 2,
+        "name": "Arlond",
+        "description": "A full range of aftermarket replacement motorcycle indicators from Bike It and Oxford Products. Our range has such a large variety of different styles; chrome, custom, LED, fairing, micro and the latest streaming indicators there's no doubt you will find the right ones for you.",
+        "rating": "3star"
+    },
+    {
+        "_id": 3,
+        "name": "Finch",
+        "description": "A full range of aftermarket replacement motorcycle indicators from Bike It and Oxford Products. Our range has such a large variety of different styles; chrome, custom, LED, fairing, micro and the latest streaming indicators there's no doubt you will find the right ones for you.",
+        "rating": "3star"
+    },
+    {
+        "_id": 4,
+        "name": "Qupid",
+        "description": "A full range of aftermarket replacement motorcycle indicators from Bike It and Oxford Products. Our range has such a large variety of different styles; chrome, custom, LED, fairing, micro and the latest streaming indicators there's no doubt you will find the right ones for you.",
+        "rating": "3star"
+    }
+]
