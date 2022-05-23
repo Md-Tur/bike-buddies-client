@@ -4,7 +4,7 @@ import logo from '../../../images/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="mt-5 p-10 bg-white text-base-content">
+        <footer className="mt-5 p-10 bg-stone-400 text-base-content">
             <div className="footer">
                 <div>
                     <span className="normal-case text-xl"><img src={logo} alt="" className="h-24 w-45" />Bike Buddies</span>
