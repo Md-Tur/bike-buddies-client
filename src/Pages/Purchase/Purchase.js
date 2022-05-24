@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 const Purchase = () => {
     const [product, setProduct] = useState('');
     const { id } = useParams();
-    console.log(id);
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${id}`)
@@ -25,15 +24,30 @@ const Purchase = () => {
                         <p><small>Minimum Order: {product.minimum} </small></p>
                         <p><small> Available: {product.available} </small></p>
                         <p>Price: {product.price} </p>
-                        <div className="card-actions">
-
-                        </div>
                     </div>
                 </div>
             </div>
 
             <div>
-                dasdas
+                <div className="card lg:max-w-lg bg-base-100 lg:pl-12">
+                    <div className='flex justify-center items-center'>
+                        <form>
+                            <input type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
+                            <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs mb-2 mt-2" />
+                            <div className='flex gap-2'>
+                                <button className="btn btn-error">-</button>
+                                <input type="text" placeholder="Quantity" className="input input-bordered w-60 max-w-xs" />
+                                <button className="btn btn-success">+</button>
+                            </div>
+                            <input type="text" placeholder="Price" className="input input-bordered w-full max-w-xs mb-2 mt-2" />
+                            <input type="text" placeholder="Address" className="input input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="Phone" className="input input-bordered w-full max-w-xs mb-2 mt-2" />
+                            <div className='flex justify-center'>
+                                <input className="btn btn-outline btn-success " type="submit" value="Confirm Purchase" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
         </div>
