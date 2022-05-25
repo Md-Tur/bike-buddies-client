@@ -57,8 +57,8 @@ const Purchase = () => {
             address,
             mobile
         }
-        console.log(user);
-        /* fetch("http://localhost:5000/product", {
+
+        fetch("http://localhost:5000/product", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -72,9 +72,8 @@ const Purchase = () => {
                     document.getElementsByTagName("input").value = "";
 
                 }
-            }) */
+            })
     };
-
 
     return (
         <div className="grid lg:grid-cols-2 sm:grid-cols-1 lg:px-40 my-16">
