@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Review = ({ review }) => {
+const Review = ({ feedback }) => {
 
-    const { name, description, rating } = review;
+    const { name, email, review, rating } = feedback;
 
     return (
         <div className="card lg:max-w-lg bg-base-100 shadow-xl">
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
-                <p><small>Review: {description} </small></p>
+                <h2 className="card-title">Name: {name}</h2>
+                <p><small>Email: {email} </small></p>
+                <p><small>Review: {review} </small></p>
                 <p>Ratings: {rating} </p>
             </div>
         </div>

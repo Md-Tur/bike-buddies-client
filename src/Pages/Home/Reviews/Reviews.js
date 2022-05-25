@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('review.json')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])
@@ -17,9 +17,9 @@ const Reviews = () => {
             <div className='px-12'>
                 <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-3'>
                     {
-                        reviews.map(review => <Review
-                            key={review._id}
-                            review={review}
+                        reviews.slice(-3).map(feedback => <Review
+                            key={feedback._id}
+                            feedback={feedback}
                         ></Review>)
                     }
                 </div>
