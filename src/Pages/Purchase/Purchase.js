@@ -40,8 +40,9 @@ const Purchase = () => {
     const handlePurchase = (event) => {
 
         event.preventDefault();
-        const name = user.displayName;
-        const email = user.email;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const product = document.getElementById('product').value;
         const quantity = document.getElementById('quantity').value;
         const price = document.getElementById('price').value;
         const address = document.getElementById('address').value;
@@ -50,6 +51,7 @@ const Purchase = () => {
         const user = {
             name,
             email,
+            product,
             quantity,
             price,
             address,
@@ -77,7 +79,7 @@ const Purchase = () => {
     return (
         <div className="grid lg:grid-cols-2 sm:grid-cols-1 lg:px-40 my-16">
             <div>
-                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                <div className="card lg:max-w-lg bg-base-100">
                     <figure className="px-10 pt-10">
                         <img className="rounded-xl" style={{ height: "200px", width: "350px" }} src={product.img} alt="" />
                     </figure>
@@ -96,9 +98,11 @@ const Purchase = () => {
                     <div className='flex justify-center '>
                         <form>
                             <label className='block' htmlFor="">Name:</label>
-                            <input type="text" value={user.displayName} className="input input-bordered w-full max-w-xs" disabled readOnly />
+                            <input type="text" id='name' value={user.displayName} className="input input-bordered w-full max-w-xs" disabled readOnly />
                             <label className='block mt-2' htmlFor="">Email:</label>
-                            <input type="email" value={user.email} disabled readOnly className="input input-bordered w-full max-w-xs mb-2" />
+                            <input type="email" id='email' value={user.email} disabled readOnly className="input input-bordered w-full max-w-xs mb-2" />
+                            <label className='block mt-2' htmlFor="">Product Name:</label>
+                            <input type="text" id='product' value={product.name} disabled readOnly className="input input-bordered w-full max-w-xs mb-2" />
                             <label className='block mt-2' htmlFor="">Quantity:</label>
                             <input type="text" id='quantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs mb-2" value={quantity} />
                             <div className='flex gap-5 justify-center'>
