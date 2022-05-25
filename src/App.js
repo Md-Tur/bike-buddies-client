@@ -5,6 +5,7 @@ import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
+import AllUsers from './Pages/Dashboard/AllUsers';
 import Dashborad from './Pages/Dashboard/Dashborad';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
@@ -50,6 +51,7 @@ function App() {
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
           <Route path='manageOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
         </Route>
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
         <Route path='/about' element={<About></About>}></Route>
