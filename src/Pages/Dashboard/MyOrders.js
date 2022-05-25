@@ -9,18 +9,44 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        const getOrders = async () => {
-            const email = user.email;
-            const url = `http://localhost:5000/order?email=${email}`;
-            const { data } = await axios.get(url);
-            setOrders(data);
+        if (user) {
+            const getOrders = async () => {
+                const email = user.email;
+                const url = `http://localhost:5000/order?email=${email}`;
+                const { data } = await axios.get(url);
+                setOrders(data);
+            }
+            getOrders();
         }
-        getOrders();
     }, [user])
 
     return (
         <div>
-            <h2>Your orders here</h2>
+            <h2 className='mt-2 mb-2'>Your orders here</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map((order, index) => <tr className="hover">
+                                <th>{index + 1}</th>
+                                <td>{user.displayName}</td>
+                                <td>{order.name}</td>
+                                <td>Purple</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
