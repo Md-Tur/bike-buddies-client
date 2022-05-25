@@ -38,6 +38,7 @@ const Login = () => {
 
     if (gUser || user) {
         navigate('/');
+        console.log(gUser || user);
     }
 
     return (

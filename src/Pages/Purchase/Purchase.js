@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
     const [product, setProduct] = useState('');
     const { id } = useParams();
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${id}`)
@@ -37,8 +40,8 @@ const Purchase = () => {
     const handlePurchase = (event) => {
 
         event.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const name = user.displayName;
+        const email = user.email;
         const quantity = document.getElementById('quantity').value;
         const price = document.getElementById('price').value;
         const address = document.getElementById('address').value;
@@ -52,8 +55,6 @@ const Purchase = () => {
             address,
             mobile
         }
-
-
 
         fetch("http://localhost:5000/product", {
             method: "POST",
@@ -70,8 +71,6 @@ const Purchase = () => {
 
                 }
             })
-
-
     };
 
 
@@ -96,16 +95,20 @@ const Purchase = () => {
                 <div className="card lg:max-w-lg bg-base-100 lg:pl-12">
                     <div className='flex justify-center '>
                         <form>
-                            <input type="text" id='name' placeholder="Name" className="input input-bordered w-full max-w-xs" />
-                            <input type="email" id='email' placeholder="Email" className="input input-bordered w-full max-w-xs mb-2 mt-2" />
+                            <label className='block' htmlFor="">Name:</label>
+                            <input type="text" value={user.displayName} className="input input-bordered w-full max-w-xs" disabled readOnly />
+                            <label className='block mt-2' htmlFor="">Email:</label>
+                            <input type="email" value={user.email} disabled readOnly className="input input-bordered w-full max-w-xs mb-2" />
+                            <label className='block mt-2' htmlFor="">Quantity:</label>
                             <input type="text" id='quantity' placeholder="Quantity" className="input input-bordered w-full max-w-xs mb-2" value={quantity} />
                             <div className='flex gap-5 justify-center'>
                                 <button onClick={handleDecrease} className="btn btn-error">Decrease</button>
                                 <button onClick={handleIncrease} className="btn btn-success">Increase</button>
                             </div>
-                            <input type="text" id='price' placeholder="Price" className="input input-bordered w-full max-w-xs mb-2 mt-2" value={price} />
-                            <input type="text" id='address' placeholder="Address" className="input input-bordered w-full max-w-xs" />
-                            <input type="text" id='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs mb-2 mt-2" />
+                            <label className='block mt-2' htmlFor="">Price:</label>
+                            <input type="text" id='price' placeholder="Price" className="input input-bordered w-full max-w-xs" value={price} />
+                            <input type="text" id='address' placeholder="Address" className="input input-bordered w-full max-w-xs mt-2 mb-2" required />
+                            <input type="text" id='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs mb-2" required />
                             <div className='flex justify-center'>
                                 <input disabled={disable} onClick={handlePurchase} className="btn btn-outline btn-success " type="submit" value="Confirm Purchase" />
                             </div>
