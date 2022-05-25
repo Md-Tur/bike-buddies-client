@@ -10,13 +10,9 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            const getOrders = async () => {
-                const email = user.email;
-                const url = `http://localhost:5000/order?email=${email}`;
-                const { data } = await axios.get(url);
-                setOrders(data);
-            }
-            getOrders();
+            fetch(`http://localhost:5000/order?user=${user?.email}`)
+                .then(res => res.json())
+                .then(data => setOrders(data));
         }
     }, [user])
 
@@ -31,7 +27,9 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Product Name</th>
+                            <th>Quantity</th>
                             <th>Price</th>
+                            <th>Address</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,9 +37,17 @@ const MyOrders = () => {
                         {
                             orders.map((order, index) => <tr className="hover">
                                 <th>{index + 1}</th>
-                                <td>{user.displayName}</td>
                                 <td>{order.name}</td>
-                                <td>Purple</td>
+                                <td>{order.email}</td>
+                                <td>{order.product}</td>
+                                <td>{order.quantity}</td>
+                                <td>{order.price}</td>
+                                <td>{order.address}</td>
+                                <td>
+                                    <button>payment</button>
+                                    <button>Cancel</button>
+                                </td>
+
                             </tr>)
                         }
                     </tbody>

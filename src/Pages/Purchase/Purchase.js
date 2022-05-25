@@ -57,8 +57,8 @@ const Purchase = () => {
             address,
             mobile
         }
-
-        fetch("http://localhost:5000/product", {
+        console.log(user);
+        /* fetch("http://localhost:5000/product", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -72,7 +72,7 @@ const Purchase = () => {
                     document.getElementsByTagName("input").value = "";
 
                 }
-            })
+            }) */
     };
 
 
