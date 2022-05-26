@@ -15,7 +15,7 @@ const AddReview = () => {
             review: event.target.review.value,
             rating: event.target.rating.value
         }
-        fetch("http://localhost:5000/review", {
+        fetch("https://polar-coast-87590.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

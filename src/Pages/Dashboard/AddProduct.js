@@ -1,16 +1,38 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
     const handleAddProduct = event => {
         event.preventDefault();
-        const img = event.target.img.value;
-        const name = event.target.name.value;
-        const description = event.target.description.value;
-        const minimum = event.target.minimum.value;
-        const available = event.target.available.value;
-        const price = event.target.price.value;
-        console.log(img, name, description, minimum, available, price);
+        const addProduct = {
+            img: event.target.img.value,
+            name: event.target.name.value,
+            description: event.target.description.value,
+            minimum: event.target.minimum.value,
+            available: event.target.available.value,
+            price: event.target.price.value
+        }
+
+        fetch('https://polar-coast-87590.herokuapp.com/addproduct', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(addProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    toast.success('Product added successfully');
+                    event.target.reset();
+                }
+
+                else
+                    toast.error('Did something wrong');
+            })
+
+
     }
 
     return (

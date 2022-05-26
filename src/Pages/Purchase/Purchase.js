@@ -10,7 +10,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://polar-coast-87590.herokuapp.com/product/${id}`)
             .then((res) => res.json())
             .then((data) => setProduct(data));
     }, [id]);
@@ -28,13 +28,14 @@ const Purchase = () => {
     };
 
     let price = quantity * parseInt(product.price);
+    const stock = parseInt(product.available)
 
     useEffect(() => {
-        if (quantity >= 150)
+        if (quantity >= 150 || stock < quantity)
             setDisable(false);
         else
             setDisable(true);
-    }, [quantity]);
+    }, [quantity, stock]);
 
 
     const handlePurchase = (event) => {
@@ -58,7 +59,7 @@ const Purchase = () => {
             mobile
         }
 
-        fetch("http://localhost:5000/product", {
+        fetch("https://polar-coast-87590.herokuapp.com/product", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

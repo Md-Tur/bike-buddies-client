@@ -13,7 +13,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?user=${user?.email}`, {
+            fetch(`https://polar-coast-87590.herokuapp.com/order?user=${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -44,7 +44,7 @@ const MyOrders = () => {
             confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.isConfirmed) {
-                const url = `http://localhost:5000/order/${id}`;
+                const url = `https://polar-coast-87590.herokuapp.com/order/${id}`;
                 fetch(url, {
                     method: "DELETE",
                 })
