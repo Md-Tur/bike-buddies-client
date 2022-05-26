@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import login from '../../../images/login.png';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
 
@@ -24,8 +25,14 @@ const Login = () => {
     };
 
     const navigate = useNavigate();
-
+    const [token] = useToken(gUser || user);
     let signInError;
+
+    useEffect(() => {
+        if (token) {
+            navigate('/');
+        }
+    }, [token, navigate])
 
     if (gLoading || loading) {
         return <Loading></Loading>
@@ -33,10 +40,6 @@ const Login = () => {
 
     if (gError || error) {
         signInError = <p className='text-red-500'><small>{gError?.message || error?.message}</small></p>
-    }
-
-    if (gUser || user) {
-        navigate('/');
     }
 
     return (

@@ -1,5 +1,7 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 
@@ -7,24 +9,40 @@ const MyOrders = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?user=${user?.email}`)
-                .then(res => res.json())
-                .then(data => setOrders(data));
+            fetch(`http://localhost:5000/order?user=${user?.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json();
+                })
+                .then(data => {
+
+                    setOrders(data);
+                });
         }
     }, [user])
 
     const handelDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "You want to cancel this order",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.isConfirmed) {
                 const url = `http://localhost:5000/order/${id}`;
@@ -36,8 +54,8 @@ const MyOrders = () => {
 
                     });
                 Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
+                    'Cancelled!',
+                    'Your order has been cancelled',
                     'success'
                 )
             }
@@ -74,8 +92,8 @@ const MyOrders = () => {
                                 <td>{order.price}</td>
                                 <td>{order.address}</td>
                                 <td>
-                                    <button>payment</button>
-                                    <button onClick={() => handelDelete(order._id)}>Cancel</button>
+                                    <button className="btn btn-xs">payment</button>
+                                    <button className="btn btn-xs ml-2" onClick={() => handelDelete(order._id)}>Cancel</button>
                                 </td>
                             </tr>)
                         }

@@ -68,7 +68,7 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    toast.success("Your Purchase Successfull");
+                    toast.success("Your order is confirmed");
                     document.getElementsByTagName("input").value = "";
                 }
             })
@@ -112,7 +112,7 @@ const Purchase = () => {
                             <input type="text" id='address' placeholder="Address" className="input input-bordered w-full max-w-xs mt-2 mb-2" required />
                             <input type="text" id='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs mb-2" required />
                             <div className='flex justify-center'>
-                                <input disabled={disable} onClick={handlePurchase} className="btn btn-outline btn-success " type="submit" value="Confirm Purchase" />
+                                <input disabled={disable} onClick={handlePurchase} className="btn btn-outline btn-success " type="submit" value="Confirm Order" />
                             </div>
                         </form>
                     </div>
