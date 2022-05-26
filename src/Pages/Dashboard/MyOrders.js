@@ -28,11 +28,10 @@ const MyOrders = () => {
                     return res.json();
                 })
                 .then(data => {
-
                     setOrders(data);
                 });
         }
-    }, [user])
+    }, [user, navigate])
 
     const handelDelete = (id) => {
         Swal.fire({
