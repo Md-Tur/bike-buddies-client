@@ -10,7 +10,6 @@ const AddProduct = () => {
         const minimum = event.target.minimum.value;
         const available = event.target.available.value;
         const price = event.target.price.value;
-        console.log(img, name, description, minimum, available, price);
     }
 
     return (
