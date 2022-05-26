@@ -1,9 +1,9 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UsersRow = ({ user, refetch }) => {
+const UsersRow = ({ user, index, refetch }) => {
 
-    const { displayName, email, role, index } = user;
+    const { email, role } = user;
 
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -22,7 +22,6 @@ const UsersRow = ({ user, refetch }) => {
     return (
         <tr className="hover">
             <th>{index + 1}</th>
-            <td>{displayName}</td>
             <td>{email}</td>
             <td>{
                 role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>

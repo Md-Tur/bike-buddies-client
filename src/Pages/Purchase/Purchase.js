@@ -68,9 +68,8 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    toast("Items added successfully.");
+                    toast.success("Your Purchase Successfull");
                     document.getElementsByTagName("input").value = "";
-
                 }
             })
     };
