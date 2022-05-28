@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const Myprofile = () => {
+    const [profile, setProfile] = useState();
+    const [user] = useAuthState(auth);
 
     const handleProfile = event => {
         event.preventDefault();
@@ -13,7 +17,7 @@ const Myprofile = () => {
             linkedin: event.target.linkedin.value
         }
 
-        fetch('https://polar-coast-87590.herokuapp.com/myprofile', {
+        fetch('https://polar-coast-87590.herokuapp.com/my_profile', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -32,6 +36,16 @@ const Myprofile = () => {
             })
     }
 
+    useEffect(() => {
+        if (user) {
+            fetch(
+                `https://polar-coast-87590.herokuapp.com/view_profile?user=${user?.email}`
+            )
+                .then((res) => res.json())
+                .then((data) => setProfile(data[0]));
+        }
+    }, [user]);
+
     return (
         <div>
             <h2>Welcome To Your Profile</h2>
@@ -40,11 +54,11 @@ const Myprofile = () => {
                     <div className='flex justify-center items-center'>
                         <div className="card lg:max-w-lg bg-base-100 shadow-xl">
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title"><span className='text-green-700'>Name: </span> Md. Tur Ibna Mostafiz</h2>
-                                <p><span className='text-green-700'>Email: </span>turibnmostafiz@gmail.com </p>
-                                <p><span className='text-green-700'>Location: </span>4 year B.Sc in C.S.E (Graduated) </p>
-                                <p><span className='text-green-700'>Contact: </span> HTML,CSS,Bootstrap,Tailwind CSS,javaScript, React,google firebase,node js,express js, jwt,mongoDB </p>
-                                <p><span className='text-green-700'>Linkedin: </span> HTML,CSS,Bootstrap,Tailwind CSS,javaScript, React,google firebase,node js,express js, jwt,mongoDB </p>
+                                <h2 className="card-title"><span className='text-green-700'>Name: </span>{profile?.name}</h2>
+                                <p><span className='text-green-700'>Email: </span>{user?.email}</p>
+                                <p><span className='text-green-700'>Location: </span>{profile?.location}</p>
+                                <p><span className='text-green-700'>Contact: </span>{profile?.Contact} </p>
+                                <p><span className='text-green-700'>Linkedin: </span>{profile?.linkedin}</p>
                             </div>
                         </div>
                     </div>
