@@ -30,7 +30,7 @@ const ManageAllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr className="hover">
+                            orders?.map((order, index) => <tr className="hover">
                                 <th>{index + 1}</th>
                                 <td>{order.product}</td>
                                 <td>{order.name}</td>
