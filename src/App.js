@@ -16,11 +16,13 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAdmin from './Pages/Login/RequireAdmin/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
-import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import AboutUs from './Pages/AboutUs/AboutUs';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navbar from './Pages/Shared/Navbar/Navbar';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import Carrier from './Pages/Carrier/Carrier';
 
 function App() {
   return (
@@ -64,7 +66,9 @@ function App() {
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/myPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/aboutUs' element={<AboutUs></AboutUs>}></Route>
+        <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
+        <Route path='/carrier' element={<Carrier></Carrier>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
