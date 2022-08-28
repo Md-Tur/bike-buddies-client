@@ -4,8 +4,8 @@ import logo from '../../../images/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="mt-5 p-10 bg-stone-400 text-base-content">
-            <div className="footer">
+        <footer className="mt-5 p-10 bg-stone-800 text-base-content">
+            <div className="footer text-white">
                 <div>
                     <span className="normal-case text-xl"><img src={logo} alt="" className="h-24 w-45" />Bike Buddies</span>
                 </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                     <Link to="/" className="link link-hover">Cookie policy</Link>
                 </div>
             </div>
-            <p className="text-center text-xs mt-10">
+            <p className="text-center text-xs mt-10 text-white">
                 &copy;2022 Bike Buddies. All rights reserved.
             </p>
         </footer>
