@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png';
+import fb from '../../../images/facebook.png';
+import inst from '../../../images/instagram.png';
+import twt from '../../../images/twitter.png';
+import yt from '../../../images/youtube.png';
 
 const Footer = () => {
     return (
@@ -28,6 +32,12 @@ const Footer = () => {
                     <Link to="/" className="link link-hover">Terms of use</Link>
                     <Link to="/" className="link link-hover">Privacy policy</Link>
                     <Link to="/" className="link link-hover">Cookie policy</Link>
+                </div>
+                <div className='flex items-center content-center h-full'>
+                    <img src={fb} alt="" />
+                    <img src={inst} alt="" />
+                    <img src={twt} alt="" />
+                    <img src={yt} alt="" />
                 </div>
             </div>
             <p className="text-center text-xs mt-10 text-white">
