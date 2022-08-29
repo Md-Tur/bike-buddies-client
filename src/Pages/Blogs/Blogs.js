@@ -1,67 +1,38 @@
 import React from 'react';
+import suspension from '../../images/suspension.jpg';
+import indicator from '../../images/indicator.png';
+import diskBrake from '../../images/disk brake.jpg';
 
 const Blogs = () => {
     return (
         <div className='pl-10 pr-10 ml-10 mr-10'>
-            <div className='mb-2 mt-2'>
-                <p>
-                    <span className='text-rose-900'>Q1. How will you improve the performance of a React Application?</span>
-                    <br />
-                    Ans: Keeping component state local where necessary.
-                    Memoizing React components to prevent unnecessary re-renders.
-                    Code-splitting in React using dynamic import
-                    Windowing or list virtualization in React.
-                    Lazy loading images in React.
-                </p>
+            <div className='flex mt-5'>
+                <div>
+                    <img src={suspension} alt="" />
+                </div>
+                <div>
+                    <h1 className='text-center font-bold text-3xl'>Suspension</h1>
+                    <p className='font-medium'>The primary goal of motorcycle suspension is to keep vehicle tires in contact with the ground. Without proper suspension, tires would lose traction when encountering bumps, dips or other ground imperfections. We can’t forget about braking, acceleration or cornering forces either. <br /> Motorcycle suspensions use a spring and damper combination to isolate the chassis and rider from road imperfections. On-road motorcycle suspension systems work to minimize the effect of potholes, bumps, cornering and acceleration/deceleration forces. Off-road motorcycle suspension systems handle roots, rocks, jumps, ledges and more.<br />Without suspension, any impact between a vehicle tire and a ground imperfection is at best uncomfortable, and at worst, the cause of a dangerous crash. </p>
+                </div>
             </div>
-            <hr />
-            <div>
-                <p>
-                    <span className='text-rose-900'>Q2. What are the different ways to manage a state in a React application?</span>
-                    <br />
-                    There are four main types of state you need to properly manage in your React apps:
-
-                    1. Local (UI) state – Local state is data we manage in one or another component.
-
-                    Local state is most often managed in React using the useState hook.
-                    <br />
-                    2. Global (UI) state – Global state is data we manage across multiple components.
-
-                    Global state is necessary when we want to get and update data anywhere in our app, or in multiple components at least.
-                    <br />
-                    3. Server state – Data that comes from an external server that must be integrated with our UI state.
-
-                    Server state is a simple concept, but can be hard to manage alongside all of our local and global UI state.
-                    <br />
-                    4. URL state – Data that exists on our URLs, including the pathname and query parameters.
-                </p>
+            <div className='flex mt-5'>
+                <div>
+                    <img src={indicator} alt="" />
+                </div>
+                <div>
+                    <h1 className='text-center font-bold text-3xl'>Indicator</h1>
+                    <p className='font-medium'>Indicator lights are used to make the operating status (on, off, fault) of the device on which they are installed visible from the outside by means of a small light. The colour of the light emitted will therefore be associated with a precise status of the application, making it instantly understandable and easy to use for the end user.<br />Each indicator light is made up of four fundamental parts. Starting from the front, where the lens or diffuser is located. This component is made of plastic (normally polycarbonate, polysulfone or nylon) which allows light to be diffused. The resulting lighting effect can be a spot light, a simple signal or have a lighting function depending on the final application.
+                        The next part is the light source. This is the heart of the indicator, and is usually made up of a light source: lamp or LED. The plastic support, on the other hand, is the body of the indicator itself, also made of plastic. The choice of polymer is made taking into consideration the technical performance required, including resistance to different temperature ranges: polycarbonate up to 120°, polysulfone up to 150°. The body may also be made of metal depending on the degree of resistance required for the types of wear.</p>
+                </div>
             </div>
-            <hr />
-            <div className='mb-2 mt-2'>
-                <p>
-                    <span className='text-rose-900'>Q3. Why should we not update the state directly?</span>
-                    <br />
-                    Ans: If you update it directly, calling the setState() afterward may just replace the update you made.
-                    When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.
-                    You will lose control of the state across all components.
-                </p>
-            </div>
-            <hr />
-            <div>
-                <p>
-                    <span className='text-rose-900'>Q4. What is a unit test? Why should write unit tests?</span>
-                    <br />
-                    UNIT TESTING is a type of software testing where individual units or components of a software are tested.
-                    Unit testing allows software developers to actually think through the design of the software and what has to be done before they write the code. This can help them to stay focused and can also help them to create much better designs.
-                </p>
-            </div>
-            <hr />
-            <div className='mb-2 mt-2'>
-                <p>
-                    <span className='text-rose-900'>Q5. How does prototypical inheritance work?</span>
-                    <br />
-                    Ans: The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
-                </p>
+            <div className='flex mt-5'>
+                <div>
+                    <img src={diskBrake} alt="" />
+                </div>
+                <div>
+                    <h1 className='text-center font-bold text-3xl'>Disk Brake</h1>
+                    <p className='font-medium'>The disc brake system consists of a rotor or disc fitted on the wheel and calliper with pads on either side. The system becomes complete with the fluid line which comes from the oil reservoir. The oil reservoir is connected to a pump which is the brake lever. <br />So, when you pull the brake lever, the oil is pushed towards the callipers and in turn; it applies pressure on the pads which creates friction with the disc to slow or stop the motorcycle. The bite of the callipers on the disc depends on the size of the pads or the area of contact of the pads with the disc.</p>
+                </div>
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <div className='grid grid-cols-12'>
-            <div className=' text-2xl text-white bg-slate-400 col-span-4'>
+            <div className=' text-2xl text-black bg-stone-200 col-span-4'>
                 <div className='flex content-center items-center h-full w-full'>
                     <div className='ml-10'>
                         <p> <span className='font-medium'>Phone:</span> 01218111999</p>
