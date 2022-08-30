@@ -1,5 +1,4 @@
 import React from 'react';
-import banner from '../../../images/banner/banner.jpg';
 import banner1 from '../../../images/banner/banner1.jpg';
 import indicator from '../../../images/right-arrow.png';
 
@@ -11,11 +10,12 @@ const Banner = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
     };
+
     return (
         <div>
             <div style={background_image}>
                 <div className='h-full'>
-                    <div className='text-green-500 flex' style={{ justifyContent: "center", alignItems: "center" }}>
+                    <div className='text-green-500 flex h-full' style={{ justifyContent: "center", alignItems: "center" }}>
                         <div>
                             <h1 className='text-6xl font-bold'>Welcome to Bike Buddies</h1>
                             <p className='mt-3 text-center text-2xl font-medium'>This is a manufacturer website from where you can <br /> purchase any parts that you needed for your dream bike.</p>

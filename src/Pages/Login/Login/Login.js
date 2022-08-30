@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../hooks/useToken';
+import loginBg from '../../../images/login-bg.jpg';
 
 const Login = () => {
 
@@ -42,8 +43,16 @@ const Login = () => {
         signInError = <p className='text-red-500'><small>{gError?.message || error?.message}</small></p>
     }
 
+    const background_image = {
+        backgroundImage: `url(${loginBg})`,
+        height: "100vh",
+        width: '100%',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+    };
+
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center' style={background_image}>
             <div className="mt-3 card lg:card-side bg-base-100 shadow-xl">
                 <figure><img className='h-full w-full' src={login} alt="" /></figure>
                 <div className="card-body">

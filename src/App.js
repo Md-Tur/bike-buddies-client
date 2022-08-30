@@ -23,6 +23,7 @@ import Navbar from './Pages/Shared/Navbar/Navbar';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Carrier from './Pages/Carrier/Carrier';
+import Premium from './Pages/Premium/Premium';
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
         <Route path='/aboutUs' element={<AboutUs></AboutUs>}></Route>
         <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
         <Route path='/carrier' element={<Carrier></Carrier>}></Route>
+        <Route path='/premium' element={<Premium></Premium>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

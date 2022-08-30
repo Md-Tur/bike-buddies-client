@@ -26,6 +26,7 @@ const Navbar = () => {
             <li><Link to="/aboutUs">About US</Link></li>
             <li><Link to="/contactUs">Contact US</Link></li>
             <li><Link to="/carrier">Carrier</Link></li>
+            <li><Link to="/premium">Premium</Link></li>
             <li>
                 {user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}
             </li>

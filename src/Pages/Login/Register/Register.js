@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../../hooks/useToken';
+import signUpBg from '../../../images/signup-bg.jpg';
 
 const Register = () => {
 
@@ -44,8 +45,16 @@ const Register = () => {
         navigate('/');
     }
 
+    const background_image = {
+        backgroundImage: `url(${signUpBg})`,
+        height: "100vh",
+        width: '100%',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+    };
+
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center' style={background_image}>
             <div className="mt-3 card lg:card-side bg-base-100 shadow-xl">
                 <figure><img className='h-full w-full' src={login} alt="" /></figure>
                 <div className="card-body">
