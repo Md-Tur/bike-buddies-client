@@ -1,5 +1,5 @@
 import React from 'react';
-import banner1 from '../../../images/banner/banner1.jpg';
+import banner1 from '../../../images/banner/banner.jpg';
 import indicator from '../../../images/right-arrow.png';
 
 const Banner = () => {
@@ -15,10 +15,10 @@ const Banner = () => {
         <div>
             <div style={background_image}>
                 <div className='h-full'>
-                    <div className='text-green-500 flex h-full' style={{ justifyContent: "center", alignItems: "center" }}>
+                    <div className='text-sky-50 flex h-full' style={{ alignItems: "center" }}>
                         <div>
                             <h1 className='text-6xl font-bold'>Welcome to Bike Buddies</h1>
-                            <p className='mt-3 text-center text-2xl font-medium'>This is a manufacturer website from where you can <br /> purchase any parts that you needed for your dream bike.</p>
+                            <p className='mt-3 text-center text-3xl font-medium'>This is a manufacturer website from where you can <br /> purchase any parts that you needed for your dream bike.</p>
                             <div className='mt-4 flex content-between ml-16 font-medium'>
                                 <div className='flex mr-4'>
                                     <img src={indicator} alt="" /> <p className='ml-2'>EMI Facilities</p>
